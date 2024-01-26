@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Message Encoder/Decoder</title>
+</head>
+<body>
+    <div id="mainMenuContainer">
+        <button onclick="showHomeScreen()">Main Menu</button>
+    </div>
+
+    <div id="backButtonContainer">
+        <button id="backButton" onclick="goBack()">← Back</button>
+    </div>
+
+    <div id="initialScreen" class="screen">
+        <h1>Encode/Decode Any Message Here!</h1>
+        <button onclick="showEncodeDecodeOptions()">Encode/Decode</button>
+    </div>
+
+    <div id="encodeDecodeScreen" class="screen" style="display:none;">
+        <h2>Encode or Decode?</h2>
+        <button onclick="showEncodeScreen()">Encode</button>
+        <button onclick="showDecodeScreen()">Decode</button>
+    </div>
+
+    <div id="encodeScreen" class="screen" style="display:none;">
+        <h3>Encode a Message</h3>
+        <input type="text" id="encodeInput" placeholder="Enter your message">
+        <button onclick="encodeMessage()">Encode</button>
+        <p id="encodedMessage"></p>
+    </div>
+
+    <div id="decodeScreen" class="screen" style="display:none;">
+        <h3>Decode an Encoded Message</h3>
+        <input type="text" id="decodeInput" placeholder="Enter the encoded message">
+        <button onclick="decodeMessage()">Decode</button>
+        <p id="decodedMessage"></p>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

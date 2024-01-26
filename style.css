@@ -1,0 +1,96 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background: url('https://i.imgur.com/ObdmO3U.jpg') center/cover no-repeat;
+    /*  https://i.imgur.com/ObdmO3U.jpg ||   https://i.imgur.com/9SyfZc0.jpg    */
+}
+
+#mainMenuContainer {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+#backButtonContainer {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    z-index: 1;
+}
+
+#backButton {
+    padding: 10px 20px;
+    font-size: 1em;
+    cursor: pointer;
+    background-color: #db2424;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease-in-out;
+}
+
+#backButton:hover {
+    background-color: #2980b9;
+}
+
+.screen {
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.0); /* Semi-transparent white background */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.0);
+    max-width: 600px;
+    width: 90%;
+    display: none;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 1em;
+    cursor: pointer;
+    background-color: #db2424;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    transition: background-color 0.3s ease-in-out;
+}
+
+button:hover {
+    background-color: #24db73;
+}
+
+input {
+    padding: 8px;
+    margin: 8px;
+    width: 80%;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+p {
+    margin-top: 20px;
+    color: #0fd6e1;
+}
+
+h1 {
+    color: #2bff67; 
+}
+
+h2 {
+    color: #2bff67; 
+}
+
+h3 {
+    color: #2bff67; 
+}
+
+
+#encodeDecodeScreen {
+    margin-top: 20px;
+}
