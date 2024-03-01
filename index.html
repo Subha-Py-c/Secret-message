@@ -3,43 +3,43 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
     <title>Message Encoder/Decoder</title>
+    <link rel="stylesheet" href="style.css">
+    <script defer src="script.js"></script>
 </head>
 <body>
-    <div id="mainMenuContainer">
-        <button onclick="showHomeScreen()">Main Menu</button>
-    </div>
+    <section class="hidden">
+        <h1>Message <span style="color:aquamarine;">Encoder</span>/<span style="color: aqua;">Decoder</span></h1>
+    </section>
 
-    <div id="backButtonContainer">
-        <button id="backButton" onclick="goBack()">← Back</button>
-    </div>
+    <section class="hidden">
+        <div id="encodeSection">
+            <h2>Encode a Message</h2><br>
+            <div style="display: grid; place-items: center;">
+                <input type="text" id="encodeInput" placeholder="Enter your message"><br>
+                <button onclick="encodeMessage()">Encode</button>
+                <button onclick="copyEncodedMessage()">Copy</button>
+                <!-- <p><i>Encoded Message :</i></p> -->
+                <p id="encodedMessage"></p>
+            </div>
+            
+        </div>
+    </section>
 
-    <div id="initialScreen" class="screen">
-        <h1>Encode/Decode Any Message Here!</h1>
-        <button onclick="showEncodeDecodeOptions()">Encode/Decode</button>
-    </div>
+    <section class="hidden">
+        <div id="decodeSection">
+            <h2>Decode an Encoded Message</h2><br>
+            <div style="display: grid; place-items: center;">
+                <input type="text" id="decodeInput" placeholder="Enter the encoded message"><br>
+                <button onclick="decodeMessage()">Decode</button>
+                <button onclick="copyDecodedMessage()">Copy</button>
+                <!-- <p><i>Decoded Message :</i></p> -->
+                <p id="decodedMessage"></p>
+            </div>
+            
+        </div>
+    </section>
 
-    <div id="encodeDecodeScreen" class="screen" style="display:none;">
-        <h2>Encode or Decode?</h2>
-        <button onclick="showEncodeScreen()">Encode</button>
-        <button onclick="showDecodeScreen()">Decode</button>
-    </div>
-
-    <div id="encodeScreen" class="screen" style="display:none;">
-        <h3>Encode a Message</h3>
-        <input type="text" id="encodeInput" placeholder="Enter your message">
-        <button onclick="encodeMessage()">Encode</button>
-        <p id="encodedMessage"></p>
-    </div>
-
-    <div id="decodeScreen" class="screen" style="display:none;">
-        <h3>Decode an Encoded Message</h3>
-        <input type="text" id="decodeInput" placeholder="Enter the encoded message">
-        <button onclick="decodeMessage()">Decode</button>
-        <p id="decodedMessage"></p>
-    </div>
-
-    <script src="script.js"></script>
+    <script defer src="app.js"></script> <!-- Include the scrolling functionality -->
 </body>
 </html>

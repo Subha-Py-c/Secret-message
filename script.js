@@ -1,100 +1,71 @@
-function showHomeScreen() {
-    hideAllScreens();
-    document.getElementById('initialScreen').style.display = 'block';
-}
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('show');
+        } else {
+            entry.target.classList.remove('show');
+        }
+    });
+});
 
-function showEncodeDecodeOptions() {
-    hideAllScreens();
-    document.getElementById('encodeDecodeScreen').style.display = 'block';
-}
+const hiddenSections = document.querySelectorAll('.hidden');
+hiddenSections.forEach((section) => observer.observe(section));
 
-function showEncodeScreen() {
-    hideAllScreens();
-    document.getElementById('encodeScreen').style.display = 'block';
-}
-
-function showDecodeScreen() {
-    hideAllScreens();
-    document.getElementById('decodeScreen').style.display = 'block';
-}
-
+// Function to encode a message
 function encodeMessage() {
     var message = document.getElementById('encodeInput').value;
     if (message.trim() !== "") {
         var encodedMessage = btoa(message);
-        document.getElementById('encodedMessage').innerText = 'Encoded Message: ' + encodedMessage;
+        document.getElementById('encodedMessage').innerText = encodedMessage;
     } else {
         alert("Please enter a message to encode.");
     }
 }
 
+// Function to decode an encoded message
 function decodeMessage() {
     var encodedMessage = document.getElementById('decodeInput').value;
     if (encodedMessage.trim() !== "") {
         var decodedMessage = atob(encodedMessage);
-        document.getElementById('decodedMessage').innerText = 'Decoded Message: ' + decodedMessage;
+        document.getElementById('decodedMessage').innerText = decodedMessage;
     } else {
         alert("Please enter an encoded message to decode.");
     }
 }
 
-function hideAllScreens() {
-    var screens = document.querySelectorAll('.screen');
-    screens.forEach(function (screen) {
-        screen.style.display = 'none';
-    });
+// Function to copy encoded message to clipboard
+function copyEncodedMessage() {
+    var encodedMessageContainer = document.getElementById('encodedMessage');
+    var encodedMessage = encodedMessageContainer.innerText.trim();
+
+    copyToClipboard(encodedMessage);
 }
 
-function goBack() {
-    var currentScreen = getCurrentScreen();
-    if (currentScreen === 'initialScreen') {
-        // Do nothing or handle as needed for the initial screen
+// Function to copy decoded message to clipboard
+function copyDecodedMessage() {
+    var decodedMessageContainer = document.getElementById('decodedMessage');
+    var decodedMessage = decodedMessageContainer.innerText.trim();
+
+    copyToClipboard(decodedMessage);
+}
+
+// Function to copy text to clipboard
+function copyToClipboard(text) {
+    if (navigator.clipboard) {
+        navigator.clipboard.writeText(text).then(function() {
+            alert("Message copied to clipboard!");
+        }, function(err) {
+            console.error('Could not copy text: ', err);
+            alert("Failed to copy message to clipboard!");
+        });
     } else {
-        // Hide the current screen
-        hideScreen(currentScreen);
-
-        // Show the previous screen
-        var previousScreen = getPreviousScreen(currentScreen);
-        showScreen(previousScreen);
-    }
-}
-
-// Function to get the current visible screen
-function getCurrentScreen() {
-    var screens = document.querySelectorAll('.screen');
-    for (var i = 0; i < screens.length; i++) {
-        if (screens[i].style.display === 'block') {
-            return screens[i].id;
-        }
-    }
-    return null;
-}
-
-// Function to hide a screen
-function hideScreen(screenId) {
-    var screen = document.getElementById(screenId);
-    if (screen) {
-        screen.style.display = 'none';
-    }
-}
-
-// Function to show a screen
-function showScreen(screenId) {
-    var screen = document.getElementById(screenId);
-    if (screen) {
-        screen.style.display = 'block';
-    }
-}
-
-// Function to get the previous screen
-function getPreviousScreen(currentScreen) {
-    switch (currentScreen) {
-        case 'encodeScreen':
-        case 'decodeScreen':
-            return 'encodeDecodeScreen';
-        case 'encodeDecodeScreen':
-            return 'initialScreen';
-        default:
-            return null;
+        // Fallback for browsers that don't support Clipboard API
+        var textarea = document.createElement("textarea");
+        textarea.textContent = text;
+        document.body.appendChild(textarea);
+        textarea.select();
+        document.execCommand("copy");
+        document.body.removeChild(textarea);
+        alert("Message copied to clipboard!");
     }
 }
