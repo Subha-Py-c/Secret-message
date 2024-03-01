@@ -3,18 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Message Encoder/Decoder</title>
+    <title>Message Encryptor/Decryptor</title>
     <link rel="stylesheet" href="style.css">
     <script defer src="script.js"></script>
 </head>
 <body>
     <section class="hidden">
-        <h1>Message <span style="color:aquamarine;">Encoder</span>/<span style="color: aqua;">Decoder</span></h1>
+        <h1>Message <span style="color:aquamarine;">Encryptor</span>/<span style="color: aqua;">Decryptor</span></h1>
     </section>
 
     <section class="hidden">
         <div id="encodeSection">
-            <h2>Encode a Message</h2><br>
+            <h2>Encrypt any Message Here</h2><br>
             <div style="display: grid; place-items: center;">
                 <input type="text" id="encodeInput" placeholder="Enter your message"><br>
                 <button onclick="encodeMessage()">Encode</button>
@@ -28,7 +28,7 @@
 
     <section class="hidden">
         <div id="decodeSection">
-            <h2>Decode an Encoded Message</h2><br>
+            <h2>Decrypt an Encrypted Message Here</h2><br>
             <div style="display: grid; place-items: center;">
                 <input type="text" id="decodeInput" placeholder="Enter the encoded message"><br>
                 <button onclick="decodeMessage()">Decode</button>
@@ -40,6 +40,6 @@
         </div>
     </section>
 
-    <script defer src="app.js"></script> <!-- Include the scrolling functionality -->
+    <script defer src="script.js"></script> <!-- Include the scrolling functionality -->
 </body>
 </html>
