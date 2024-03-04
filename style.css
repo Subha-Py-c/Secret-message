@@ -14,16 +14,16 @@ section {
     min-height: 70vh;
 }
 
-.hidden h1{
+h1{
     font-size: 3.7em;
 }
 
-.hidden h2{
+h2{
     font-size: 2.5em;
     color: bisque;
 }
 
-.hidden h3{
+h3{
     font-size: 2.5em;
 }
 
@@ -42,11 +42,11 @@ section {
 
 /* Styles for smaller screens (e.g., mobile devices) */
 @media only screen and (max-width: 600px) {
-    .hidden h1 {
+    h1 {
         font-size: 2.5em; /* Smaller font size for h1 on smaller screens */
     }
 
-    .hidden h2, h3 {
+    h2, h3 {
         font-size: 1.5em; /* Smaller font size for h2 and h3 on smaller screens */
     }
 
