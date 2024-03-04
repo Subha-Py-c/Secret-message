@@ -41,6 +41,11 @@ section {
 }
 
 /* Style for encode and decode buttons */
+.button-container {
+    display: flex;
+    gap: 10px; /* Adjust the gap between buttons */
+}
+
 button {
     padding: 8px 20px;
     border: none;
@@ -49,6 +54,14 @@ button {
     color: #fff; 
     cursor: pointer;
     transition: background-color 0.2s ease; 
+}
+
+button:hover{
+    background: linear-gradient(to right, skyblue, blue);
+}
+
+button:active {
+    box-shadow: 0 0 10px 3px rgba(255, 255, 255, 0.5); /* Adjust shadow properties as needed */
 }
 
 /* Style for input boxes */
