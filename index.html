@@ -17,12 +17,12 @@
             <h2>Encrypt any Message Here</h2><br>
             <div style="display: grid; place-items: center;">
                 <input type="text" id="encodeInput" placeholder="Enter your message"><br>
-                <button onclick="encodeMessage()">Encode</button>
-                <button onclick="copyEncodedMessage()">Copy</button>
-                <!-- <p><i>Encoded Message :</i></p> -->
+                <div class="button-container">
+                    <button onclick="encodeMessage()">Encode</button>
+                    <button onclick="copyEncodedMessage()">Copy</button>
+                </div>
                 <p id="encodedMessage"></p>
             </div>
-            
         </div>
     </section>
 
@@ -31,15 +31,13 @@
             <h2>Decrypt an Encrypted Message Here</h2><br>
             <div style="display: grid; place-items: center;">
                 <input type="text" id="decodeInput" placeholder="Enter the encoded message"><br>
-                <button onclick="decodeMessage()">Decode</button>
-                <button onclick="copyDecodedMessage()">Copy</button>
-                <!-- <p><i>Decoded Message :</i></p> -->
+                <div class="button-container">
+                    <button onclick="decodeMessage()">Decode</button>
+                    <button onclick="copyDecodedMessage()">Copy</button>
+                </div>
                 <p id="decodedMessage"></p>
             </div>
-            
         </div>
     </section>
-
-    <script defer src="script.js"></script> <!-- Include the scrolling functionality -->
 </body>
 </html>
