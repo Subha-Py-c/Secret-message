@@ -40,6 +40,25 @@ section {
     transform: translateX(0);
 }
 
+/* Styles for smaller screens (e.g., mobile devices) */
+@media only screen and (max-width: 600px) {
+    h1 {
+        font-size: 2.5em; /* Smaller font size for h1 on smaller screens */
+    }
+
+    h2, h3 {
+        font-size: 1.5em; /* Smaller font size for h2 and h3 on smaller screens */
+    }
+
+    p {
+        font-size: 0.9em; /* Smaller font size for p on smaller screens */
+    }
+
+    section {
+        min-height: 40vh; /* Reduced min-height for sections on smaller screens */
+    }
+}
+
 /* Style for encode and decode buttons */
 .button-container {
     display: flex;
