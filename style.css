@@ -6,12 +6,32 @@ body {
     font-family: 'Poppins', sans-serif;
     padding: 0;
     margin: 0;
+    /* overflow-x: hidden; */
+}
+
+::-webkit-scrollbar{
+    display: none;
+}
+
+.section__container {
+    /* border: 1px solid; */
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 section {
-    display: grid;
-    place-items: center; 
+    /* border: 1px solid red; */
+    /* padding: 20px; */
+    /* display: grid; */
+    /* place-items: center;  */
     align-content: center; 
     min-height: 70vh;
+}
+
+#s1{
+    height: 15vh;
 }
 
 h1{
@@ -21,6 +41,7 @@ h1{
 h2{
     font-size: 2.5em;
     color: bisque;
+    /* color: rgb(226, 33, 75); */
 }
 
 h3{
@@ -41,21 +62,24 @@ h3{
 }
 
 /* Styles for smaller screens (e.g., mobile devices) */
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 640px) {
     h1 {
-        font-size: 2.5em; /* Smaller font size for h1 on smaller screens */
+        font-size: 1.5em; /* Smaller font size for h1 on smaller screens */
     }
 
     h2, h3 {
-        font-size: 1.5em; /* Smaller font size for h2 and h3 on smaller screens */
+        font-size: 1.0em; /* Smaller font size for h2 and h3 on smaller screens */
     }
 
     p {
-        font-size: 0.9em; /* Smaller font size for p on smaller screens */
+        font-size: 0.7em; /* Smaller font size for p on smaller screens */
     }
 
     section {
         min-height: 40vh; /* Reduced min-height for sections on smaller screens */
+    }
+    #s1{
+        height: 15vh;
     }
 }
 
@@ -76,7 +100,8 @@ button {
 }
 
 button:hover{
-    background: linear-gradient(to right, skyblue, blue);
+    /* background: linear-gradient(to right, skyblue, blue); */
+    background-color: rgb(106, 150, 237);
 }
 
 button:active {
@@ -97,4 +122,30 @@ input[type="text"] {
 input[type="text"]:focus {
     outline: none; /* Remove default focus outline */
     border-color: #007bff; /* Border color when focused */
+}
+
+#encodedMessage {
+    height: 20vh;
+    width: 90%;
+    background-color: #ced4da;
+    backdrop-filter: blur(5px);
+    border-radius: 10px;
+    overflow-y: auto;
+    color: #131316;
+    font-size: 0.9em;
+}
+
+#decodedMessage {
+    height: 20vh;
+    width: 70%;
+    background-color: #ced4da;
+    backdrop-filter: blur(5px);
+    border-radius: 10px;
+    overflow-y: auto;
+    color: #131316;
+    font-size: 0.9em;
+}
+
+#s2{
+    margin-bottom: 80px;
 }
